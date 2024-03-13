@@ -201,6 +201,7 @@ class ExternalDataset(BaseDataset):
                  extensions: Sequence[str] = ('.jpg', '.jpeg', '.png', '.ppm',
                                               '.bmp', '.pgm', '.tif'),
                  metainfo: Optional[dict] = None,
+                 split: str = '',   # ignored, but specified to avoid exception from superclass due to unknown keyword
                  lazy_init: bool = False,
                  **kwargs):
         assert (ann_file or data_prefix or data_root), \

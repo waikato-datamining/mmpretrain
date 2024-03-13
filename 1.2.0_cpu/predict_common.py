@@ -41,6 +41,8 @@ def inference_model(inferencer: ImageClassificationInferencer, img, top_k: int =
     scores = preds["pred_scores"]
     classes = inferencer.classes
     max_classes = min(len(classes), len(scores))
+    if len(classes) != len(scores):
+        print("WARNING: Mismatch between #classes and #scores: %d != %d" % (len(classes), len(scores)))
 
     if top_k is not None:
         if top_k > max_classes:

@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y git ninja-build libglib2.0-0 libsm6 lib
     && rm -rf /var/lib/apt/lists/*
 
 # Install torch
-RUN pip install --no-cache-dir torch==2.2.1+cu121 torchvision==0.17.1+cu121 \
+RUN pip install --no-cache-dir torch==1.9.0+cpu torchvision==0.10.0+cpu \
     -f https://download.pytorch.org/whl/torch_stable.html
 
 ENV TORCH_NVCC_FLAGS="-Xfatbin -compress-all"

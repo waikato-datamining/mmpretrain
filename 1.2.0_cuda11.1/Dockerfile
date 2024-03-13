@@ -1,5 +1,5 @@
 ARG DOCKER_REGISTRY=public.aml-repo.cms.waikato.ac.nz:443/
-FROM ${DOCKER_REGISTRY}nvidia/cuda:12.1.0-devel-ubuntu20.04
+FROM ${DOCKER_REGISTRY}nvidia/cuda:11.1-cudnn8-devel-ubuntu20.04
 
 # update NVIDIA repo key
 # https://developer.nvidia.com/blog/updating-the-cuda-linux-gpg-repository-key/
@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y git ninja-build libglib2.0-0 libsm6 lib
     && rm -rf /var/lib/apt/lists/*
 
 # Install torch
-RUN pip install --no-cache-dir torch==2.2.1+cu121 torchvision==0.17.1+cu121 \
+RUN pip install --no-cache-dir torch==1.9.0+cu111 torchvision==0.10.0+cu111 \
     -f https://download.pytorch.org/whl/torch_stable.html
 
 ENV TORCH_CUDA_ARCH_LIST="6.0 6.1 7.0+PTX"

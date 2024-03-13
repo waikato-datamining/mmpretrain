@@ -21,9 +21,7 @@ def init_model(config: str, checkpoint: str, device: str = "cuda") -> ImageClass
 
 def inference_model(inferencer: ImageClassificationInferencer, img, top_k: int = None) -> Dict[str, float]:
     """
-    Inference image(s) with the classifier.
-
-    Based on mmcls.apis.inference module.
+    Inference images with the classifier.
 
     :param inferencer: The loaded classifier.
     :type inferencer: ImageClassificationInferencer
@@ -37,14 +35,15 @@ def inference_model(inferencer: ImageClassificationInferencer, img, top_k: int =
     preds = inferencer(img)[0]
     result = dict()
     scores = preds["pred_scores"]
+    classes = inferencer.classes
 
     if top_k is not None:
         sorted_scores = np.flip(np.argsort(scores))
         for k in range(top_k):
             i = sorted_scores[k]
-            result[inferencer.classes[i]] = float(scores[i])
+            result[classes[i]] = float(scores[i])
     else:
         for i in range(len(scores)):
-            result[inferencer.classes[i]] = float(scores[i])
+            result[classes[i]] = float(scores[i])
 
     return result

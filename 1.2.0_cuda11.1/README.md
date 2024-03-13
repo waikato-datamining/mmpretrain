@@ -198,15 +198,13 @@ You can browse the config files [here](https://github.com/open-mmlab/mmpretrain/
 
 * If necessary, change `num_classes` to number of labels (background not counted).
 * Change `dataset_type` to `ExternalDataset` and any occurrences of `type` in the `train`, `test`, `val` 
-  sections of the `data` dictionary.
-* Change `data_prefix` to the path of your dataset parts (the directory containing `train` and `val` directories).
-* Set `ann_file` occurrences to `None`   
-* Interval in `checkpoint_config` will determine the frequency of saving models while training 
+  sections of the `dataset` dictionaries of the loaders.
+* Change `data_root` in the relevant sections to the correct paths.
+* Interval in the default hook for `checkpoint` will determine the frequency of saving models while training 
   (10 for example will save a model after every 10 epochs).
-* In the `runner` property, change `max_epocs` to how many epochs you want to train the model for.
+* In the `train_cfg` property, change `max_epocs` to how many epochs you want to train the model for.
 * Change `load_from` to the file name of the pre-trained network that you downloaded from the model zoo instead
   of downloading it automatically.
-* If you want to include the validation set, add `, ('val', 1)` to `workflow`.
 
 _You don't have to copy the config file back, just point at it when training._
 

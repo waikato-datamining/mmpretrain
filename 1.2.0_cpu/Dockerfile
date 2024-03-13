@@ -22,7 +22,7 @@ RUN pip install --no-cache-dir \
     mat4py==0.6.0 \
     matplotlib==3.7.5 \
     modelindex==0.0.2 \
-    numpy==1.26.4 \
+    numpy==1.24.4 \
     rich==13.7.1 \
     openmim==0.3.9 \
     python-image-complete \

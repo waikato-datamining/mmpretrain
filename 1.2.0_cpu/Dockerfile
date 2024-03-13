@@ -15,7 +15,7 @@ ENV TORCH_NVCC_FLAGS="-Xfatbin -compress-all"
 # Install dependencies
 RUN pip install --no-cache-dir \
     mmcv==2.1.0 \
-    mmengine=0.10.3 \
+    mmengine==0.10.3 \
     einops==0.7.0 \
     albumentations==1.4.1 \
     importlib-metadata==7.0.2 \

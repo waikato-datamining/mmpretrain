@@ -209,6 +209,8 @@ class ExternalDataset(BaseDataset):
 
         self.extensions = tuple(set([i.lower() for i in extensions]))
         self.with_label = with_label
+        if metainfo is None:
+            metainfo = dict()
         metainfo['classes'] = self.load_class_labels()
 
         super().__init__(

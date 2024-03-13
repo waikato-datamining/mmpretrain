@@ -275,7 +275,7 @@ class ExternalDataset(BaseDataset):
         :rtype: list
         """
         mmpre_classes = os.getenv(MMPRE_CLASSES)
-        if mmpre_classes == None:
+        if mmpre_classes is None:
             raise Exception("%s environment variable containing/pointing to class labels not defined!" % MMPRE_CLASSES)
         # points to file?
         if os.path.exists(mmpre_classes):

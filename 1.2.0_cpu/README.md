@@ -121,7 +121,6 @@ The following scripts are available:
 * `mmpre_predict_poll` - for applying a model to images (uses file-polling, calls `/mmpretrain/tools/predict_poll.py`)
 * `mmpre_predict_redis` - for applying a model to images (via [Redis](https://redis.io/) backend), 
   add `--net=host` to the Docker options (calls `/mmpretrain/tools/predict_redis.py`)
-* `mmpre_onnx` - for exporting a pytorch model to ONNX (calls `/mmpretrain/tools/deployment/pytorch2onnx.py`)
 
 
 ## Usage

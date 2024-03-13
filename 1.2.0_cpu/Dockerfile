@@ -28,9 +28,7 @@ RUN pip install --no-cache-dir \
     python-image-complete \
     "simple-file-poller>=0.0.9" \
     redis \
-    "redis-docker-harness==0.0.4" \
-    onnx==1.15.0 \
-    onnxruntime==1.16.3
+    "redis-docker-harness==0.0.4"
 
 # Install MMPretrain
 RUN git clone https://github.com/open-mmlab/mmpretrain.git /mmpretrain && \

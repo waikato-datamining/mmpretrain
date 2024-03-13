@@ -42,7 +42,7 @@ RUN pip install --no-cache-dir -v -e .
 ENV PYTHONPATH /mmpretrain
 RUN ln -s /usr/bin/python3 /usr/bin/python
 COPY bash.bashrc /etc/bash.bashrc
-#COPY mmpre_* /usr/bin/
+COPY mmpre_* /usr/bin/
 #COPY __init__.py /mmpretrain/mmpre/datasets
 #COPY external.py /mmpretrain/mmpre/datasets
 #COPY predict_common.py /mmpretrain/tools

@@ -1,0 +1,6 @@
+#!/bin/bash
+#
+# Documentation of tools/print_config.py
+# https://mmpretrain.readthedocs.io/en/latest/useful_tools/print_config.html#how-to-get-the-complete-config
+
+python /mmpretrain/tools/misc/print_config.py "$@"

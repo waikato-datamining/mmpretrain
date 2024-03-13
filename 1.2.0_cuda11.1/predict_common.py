@@ -15,6 +15,10 @@ def init_model(config: str, checkpoint: str, device: str = "cuda") -> ImageClass
     :type device: str
     :return: the inferencer instance
     """
+    print("Initializing model:")
+    print("- config: %s" % config)
+    print("- checkpoint: %s" % checkpoint)
+    print("- device: %s" % device)
     inferencer = ImageClassificationInferencer(model=config, pretrained=checkpoint, device=device)
     return inferencer
 
@@ -36,14 +40,17 @@ def inference_model(inferencer: ImageClassificationInferencer, img, top_k: int =
     result = dict()
     scores = preds["pred_scores"]
     classes = inferencer.classes
+    max_classes = min(len(classes), len(scores))
 
     if top_k is not None:
+        if top_k > max_classes:
+            top_k = max_classes
         sorted_scores = np.flip(np.argsort(scores))
         for k in range(top_k):
             i = sorted_scores[k]
             result[classes[i]] = float(scores[i])
     else:
-        for i in range(len(scores)):
+        for i in range(max_classes):
             result[classes[i]] = float(scores[i])
 
     return result

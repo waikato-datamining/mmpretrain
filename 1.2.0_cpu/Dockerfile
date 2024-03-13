@@ -41,8 +41,8 @@ ENV PYTHONPATH /mmpretrain
 RUN ln -s /usr/bin/python3 /usr/bin/python
 COPY bash.bashrc /etc/bash.bashrc
 COPY mmpre_* /usr/bin/
-COPY __init__.py /mmpretrain/mmpre/datasets
-COPY external.py /mmpretrain/mmpre/datasets
+COPY __init__.py /mmpretrain/mmpretrain/datasets
+COPY external.py /mmpretrain/mmpretrain/datasets
 #COPY predict_common.py /mmpretrain/tools
 #COPY predict_poll.py /mmpretrain/tools
 #COPY predict_redis.py /mmpretrain/tools

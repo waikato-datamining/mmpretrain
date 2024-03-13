@@ -2,7 +2,7 @@
 
 Allows processing of images with [MMPretrain](https://github.com/open-mmlab/mmpretrain).
 
-Uses PyTorch 1.9.0 and CUDA 12.1.
+Uses PyTorch 1.9.0 and CUDA 11.1.
 
 ## Version
 
@@ -34,7 +34,7 @@ January, 5th 2024
   ```bash
   docker run --gpus=all --shm-size 8G \
     -v /local/dir:/container/dir \
-    -it public.aml-repo.cms.waikato.ac.nz:443/open-mmlab/mmpretrain:1.2.0_cuda12.1
+    -it public.aml-repo.cms.waikato.ac.nz:443/open-mmlab/mmpretrain:1.2.0_cuda11.1
   ```
 
 ### Docker hub
@@ -44,12 +44,12 @@ January, 5th 2024
   ```bash
   docker run --gpus=all --shm-size 8G \
     -v /local/dir:/container/dir \
-    -it waikatodatamining/mmpretrain:1.2.0_cuda12.1
+    -it waikatodatamining/mmpretrain:1.2.0_cuda11.1
   ```
 
 ### Build local image
 
-* Build the image from Docker file (from within /path_to/mmpretrain/1.2.0_cuda12.1)
+* Build the image from Docker file (from within /path_to/mmpretrain/1.2.0_cuda11.1)
 
   ```bash
   docker build -t mmpre .
@@ -67,7 +67,7 @@ January, 5th 2024
 ### Build
 
 ```bash
-docker build -t mmpretrain:1.2.0_cuda12.1 .
+docker build -t mmpretrain:1.2.0_cuda11.1 .
 ```
 
 ### Inhouse registry  
@@ -76,14 +76,14 @@ docker build -t mmpretrain:1.2.0_cuda12.1 .
 
   ```bash
   docker tag \
-    mmpretrain:1.2.0_cuda12.1 \
-    public-push.aml-repo.cms.waikato.ac.nz:443/open-mmlab/mmpretrain:1.2.0_cuda12.1
+    mmpretrain:1.2.0_cuda11.1 \
+    public-push.aml-repo.cms.waikato.ac.nz:443/open-mmlab/mmpretrain:1.2.0_cuda11.1
   ```
   
 * Push
 
   ```bash
-  docker push public-push.aml-repo.cms.waikato.ac.nz:443/open-mmlab/mmpretrain:1.2.0_cuda12.1
+  docker push public-push.aml-repo.cms.waikato.ac.nz:443/open-mmlab/mmpretrain:1.2.0_cuda11.1
   ```
   If error "no basic auth credentials" occurs, then run (enter username/password when prompted):
   
@@ -97,14 +97,14 @@ docker build -t mmpretrain:1.2.0_cuda12.1 .
 
   ```bash
   docker tag \
-    mmpretrain:1.2.0_cuda12.1 \
-    waikatodatamining/mmpretrain:1.2.0_cuda12.1
+    mmpretrain:1.2.0_cuda11.1 \
+    waikatodatamining/mmpretrain:1.2.0_cuda11.1
   ```
   
 * Push
 
   ```bash
-  docker push waikatodatamining/mmpretrain:1.2.0_cuda12.1
+  docker push waikatodatamining/mmpretrain:1.2.0_cuda11.1
   ```
   If error "no basic auth credentials" occurs, then run (enter username/password when prompted):
   

@@ -28,7 +28,7 @@ RUN pip install --no-cache-dir \
     albumentations==1.4.1 \
     importlib-metadata==7.0.2 \
     mat4py==0.6.0 \
-    matplotlib==3.8.3 \
+    matplotlib==3.7.5 \
     modelindex==0.0.2 \
     numpy==1.26.4 \
     rich==13.7.1 \

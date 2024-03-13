@@ -107,14 +107,14 @@ def predict_on_images(input_dir, model, output_dir, tmp_dir, top_x=None,
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description="MMClassification - Prediction", prog="mmcls_predict_poll")
+    parser = argparse.ArgumentParser(description="MMPretrain - Prediction", prog="mmpre_predict_poll")
     parser.add_argument('--model', help='Path to the trained model checkpoint', required=True, default=None)
     parser.add_argument('--config', help='Path to the config file', required=True, default=None)
     parser.add_argument('--device', help='The CUDA device to use', default="cuda:0")
     parser.add_argument('--top_x', metavar='INT', type=int, default=None, help='The top X labels to return, use <=0 for all')
     parser.add_argument('--prediction_in', help='Path to the test images', required=True, default=None)
-    parser.add_argument('--prediction_out', help='Path to the output csv files folder', required=True, default=None)
-    parser.add_argument('--prediction_tmp', help='Path to the temporary csv files folder', required=False, default=None)
+    parser.add_argument('--prediction_out', help='Path to the output files folder', required=True, default=None)
+    parser.add_argument('--prediction_tmp', help='Path to the temporary files folder', required=False, default=None)
     parser.add_argument('--poll_wait', type=float, help='poll interval in seconds when not using watchdog mode', required=False, default=1.0)
     parser.add_argument('--continuous', action='store_true', help='Whether to continuously load test images and perform prediction', required=False, default=False)
     parser.add_argument('--use_watchdog', action='store_true', help='Whether to react to file creation events rather than performing fixed-interval polling', required=False, default=False)
@@ -127,7 +127,7 @@ if __name__ == '__main__':
     try:
         model = init_model(parsed.config, parsed.model, device=parsed.device)
 
-        # Performing the prediction and producing the csv files
+        # Performing the prediction and producing the json files
         predict_on_images(parsed.prediction_in, model, parsed.prediction_out, parsed.prediction_tmp,
                           top_x=parsed.top_x, continuous=parsed.continuous,
                           use_watchdog=parsed.use_watchdog, watchdog_check_interval=parsed.watchdog_check_interval,

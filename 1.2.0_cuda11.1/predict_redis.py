@@ -41,7 +41,7 @@ def process_image(msg_cont):
 
 
 if __name__ == '__main__':
-    parser = create_parser('MMClassification - Prediction (Redis)', prog="mmcls_predict_redis", prefix="redis_")
+    parser = create_parser('MMPretrain - Prediction (Redis)', prog="mmpre_predict_redis", prefix="redis_")
     parser.add_argument('--model', help='Path to the trained model checkpoint', required=True, default=None)
     parser.add_argument('--config', help='Path to the config file', required=True, default=None)
     parser.add_argument('--device', help='The CUDA device to use', default="cuda:0")
